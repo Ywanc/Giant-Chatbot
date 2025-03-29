@@ -1,14 +1,18 @@
 import streamlit as st
-import time
+import os
+from dotenv import load_dotenv
 from jamaibase import JamAI, protocol as p
+
+load_dotenv()
+project_id = os.getenv('PROJECT_ID')
+api_key = os.getenv('API_KEY')
 
 # Header
 st.header("Giant Shopping Assistant")
 
 # feed input into LLM, stream the output
 def ask_question(user_input):
-    jamai = JamAI(api_key="jamai_sk_c7ca1250c263a27f52e7cae70fb1ce37afaa201354077cc6", 
-                  project_id="proj_a6a3a8ab72b4fc3f4f2e5bb0")
+    jamai = JamAI(api_key=api_key, project_id=project_id)
     completion = jamai.add_table_rows(
         "chat",
         p.RowAddRequest(
