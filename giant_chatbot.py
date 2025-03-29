@@ -5,7 +5,7 @@ from jamaibase import JamAI, protocol as p
 # Header
 st.header("Giant Shopping Assistant")
 
-# Simulating ask_question function (replace with your actual AI model logic)
+# feed input into LLM, stream the output
 def ask_question(user_input):
     jamai = JamAI(api_key="jamai_sk_c7ca1250c263a27f52e7cae70fb1ce37afaa201354077cc6", 
                   project_id="proj_a6a3a8ab72b4fc3f4f2e5bb0")
